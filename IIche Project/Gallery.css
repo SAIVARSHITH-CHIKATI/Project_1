@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=Merriweather:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Playfair+Display:ital,wght@1,400;1,500;1,600;1,700&family=Prata&family=Tiro+Devanagari+Sanskrit:ital@0;1&display=swap');
+
+
+
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+body
+{
+	background: /*linear-gradient(45deg,#fe0061,#ffeb3b)*/linear-gradient(to top,#fff,#FD841f);
+}
+
+header
+{
+	padding: 10px 90px;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);/*for stiff colour background remove this line of code*/
+
+}
+header/*(Logo                               Home About Menu Experts Testimonials Contact)*/
+{
+	position: fixed;/*When we assign position: absolute then the header will be present only at banner page;and one more point to be noticed is sticky value for position  */
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 20px 100px;/*vary the values to observe changes*/
+	z-index: 100;/*vary by putting z-index=1*/
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	background: rgba(0, 0, 0, 0.5);/*linear-gradient(65deg,#fff,deepskyblue)*/
+	transition: 0.5s;
+}
+
+header .navigation
+{
+	/*position: relative;*/
+	display: flex;
+}
+header .navigation li 
+{
+	list-style: none;/*removes underline in list elements*/
+	margin-left: 50px;/*play with margin values to observe changes*/
+}
+header .navigation li a 
+{
+	text-decoration: none;/*converts text color from blue to black*/
+	color: gainsboro;
+	font-size: 20px;
+	font-weight: 1000;/*check using values in range 500-1000 to observe changes*/
+	transition: 0.3s;
+}
+header .navigation li a:hover
+{
+	background: rgba(0, 0, 0, 1.0);
+	border-radius: 5px;
+}
+/*---------------------sublist involvement----------------------*/
+header ul li ul 
+{
+	position: absolute;
+	top: 39px;/*vary to vary the position of sublist*/
+	left: 0;
+	background: #000;
+	display: block;
+	width: 200px;
+	transition: 0.5s;
+	opacity: 0;
+	visibility: hidden;
+	margin-left: 1030px;
+	margin-top: 25px;
+
+}
+header ul li ul
+{
+	background: rgba(0, 0, 0, 0.5);
+}
+
+header ul li:hover ul
+{
+	opacity: 1;
+	visibility: visible;
+}
+
+
+.pics
+{
+	color: #000;
+	font-size: 80px;
+	background: #fff;/*darkorange,lavender*/
+	width: 100%;
+	border-radius: 100px;
+	font-family: 'Cinzel',serif;/*'Cinzel'*/
+	/*margin-left: 600px;*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 20px;
+	margin-top: 100px;
+	transition-delay: 1.6s;
+	opacity: 0.7;
+}
+.heading 
+{
+/*	background: linear-gradient(antiquewhite,azure);aliceblue,papayawhip*/
+/*	opacity: 1;*/
+}
+
+.img-gallery
+{
+	width: 80%;
+	margin: 100px auto 50px;/*width: 80% and margin: 100px auto 50px 
+	makes images to be at the center with margin-top 100px and margin-bottom:50px and margin-left,right auto*/
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px,1fr));/*250px will decrease the space between the columns,observe that our image size is 350x350*/
+	grid-gap: 30px;/*assigns space of 30px between rows*/
+}
+.img-gallery img 
+{
+	width: 85%;/*varying the percentage values will decrease and increase the sizes of our images in image gallery*/
+	cursor: pointer;
+	box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.6);
+}
+.img-gallery img:hover
+{
+	transform: scale(1.1) translateY(-20px);/*  1)translateY(-10px) 2)translate3d(10px, -30px, -30px) 3)translate3d(-30px, -30px, -30px) 4)rotateX(-45deg) 5)rotateY(-180deg)*/
+	border-radius: 10px;
+	box-shadow: 0 20px 15px rgba(0,0,0,0.2);
+}
+.full-img
+{
+	width: 100%;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.7);
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: none;/*initially to place the floating image on screen at correct position we will use flex prop,
+	but as initially we want to hide the floater screen so we replace flex by hidden*/
+	justify-content: center;
+	align-items: center;
+	z-index: 100;/*z-index: 100 make sures that the display of fullimage in fullimagebox when clicked is proper, like the other image affect will be removed */
+	/*display: flex,justify-content: center,align-items: center also makes the fixed image to be at the center*/
+
+}
+/*margin-left:34%;
+	margin-top:4% ; makes a new container in black(0.9) color but moves them by margin values,
+	to observe replace the top,left,display,justify-content: center,align-items: center by margin values in comments*/
+.full-img img
+{
+	width: 90%;
+	max-width: 500px;
+}
+.full-img span
+{
+	position: absolute;
+	top: 5%;
+	right: 5%;
+	font-size: 30px;
+	color: #fff;
+	cursor: pointer;
+}
+
+
+
+/*--------------------------------FOOTER------------------------------------*/
+footer
+{
+	position: relative;
+	width: 100%;
+	height: auto;
+	padding: 50px 100px;/*because of 50px top,bottom margin we have V^2 services in white background reamianing entire footer in blue background*/
+	background: linear-gradient(#fd841f,#fff);/*footer color*//*default: #3044a5*/
+}
+footer .container
+{
+	width: 100%;
+	display: grid;
+	grid-template-columns: 2fr 1fr 1fr 1fr;
+	grid-gap: 20px;/*manages distance between each column*/
+}
+
+footer .container .sec h2 
+{
+	position: relative;
+	color: #fff;
+	font-weight: 500;
+	margin-bottom: 15px;
+}
+footer .container .sec h2::before/*used to obtain the yellow underline under headins like aboutus etc..*/
+{
+	content: '';
+	position: absolute;
+	bottom: -5px;
+	left: 0;
+	width: 50px;
+	height: 2px;
+	background: #ffeb3b;
+}
+footer .container .sec p
+{
+	color: #fff;
+}
+.sci 
+{
+	margin-top: 10px;
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	margin-left: 500px;
+	grid-template-columns: repeat(4, 50px);
+	grid-gap: 10px;
+}
+.sci li 
+{
+	list-style: none;
+}
+.sci li a
+{
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	background: darkorange;/*Default: #3e56cb*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	border-radius: 4px;
+	align-items: center;
+}
+.sci li a:hover 
+{
+	background: #6380fe;
+}
+
+.sci li a .fa 
+{
+	color: #fff;
+	font-size: 20px;
+}
+
+.quicklinks
+{
+	position: relative;
+}
+.quicklinks li 
+{
+	list-style: none;
+}
+.quicklinks li a
+{
+	color: #000;
+	text-decoration: none;
+	margin-bottom: 10px;
+	display: inline-block;
+}
+.quicklinks li a:hover 
+{
+	color: aquamarine;
+}
+
+.info 
+{
+	position: relative;
+}
+
+.info li {
+	display: grid;
+	grid-template-columns: 30px 1fr;
+}
+.info li span:nth-child(1)
+{
+	color: #fff;
+	font-size: 20px;
+}
+.info li span 
+{
+	color: #fff;
+}
+.info a 
+{
+	color: #f7f7f7;
+	text-decoration: none;
+}
+.info a:hover
+{
+	color: aquamarine;
+}
+.copyrightText
+{
+	width: 100%;
+	background: linear-gradient(to right ,#000,#FD841F);/*copyright background color*/
+	padding: 100px 100px;
+	text-align: center;
+	color: #fff;
+}
+/*@media(max-width:991px )
+{
+	footer
+	{
+		padding: 40px;
+	}
+	footer .container 
+	{
+
+    grid-template-columns: repeat(2,1fr);
+    
+    }
+    .copyrightText {
+    
+    padding: 8px 40px;
+    
+    }
+
+}
+@media(max-width:768px )
+{
+	footer .container 
+	{
+
+    grid-template-columns: repeat(1,1fr);
+    
+    }
+
+}*/
+
+
+
+/*Embed google map code*/
+
+.container_1
+{
+	display: flex;
+	justify-content: last baseline;
+	padding: 100px 0px;
+	align-items: flex-start;
+	height: 100vh;
+	width: 100%;
+	flex-direction: row;
+    background: linear-gradient(to right ,#000,#FD841F);
+}
+iframe
+{
+	width: 50%;
+}
+.card
+{
+	width: 800px;/*Creating a card type of specified width and height*/
+	height: 420px;
+	justify-content: center;
+	align-items: center;
+	background: linear-gradient(to right ,#000,#FD841F);/*radial-gradient(deepskyblue,magenta); looks good*/
+	/*padding: 200px 295px;*/
+}
+.picture
+{
+
+	width: 800px;
+	height: 450px;
+}
+
+.overlay_1{
+	width: 100%;
+	height: 100%;
+	width: 800px;
+	height: 450px;
+	margin-top: -454px;
+	position: relative;
+	z-index: 1;
+	top: 0;
+	border-radius: 0px;
+	cursor: pointer;
+	background: linear-gradient(to right ,#000,#FD841F);
+	opacity: 0.7;
+	transition: 1s;
+}
+
+/*-----------------------PRELOADER------------------------------*/
+#preloader
+{
+    background: #fff url("D:/webdevelopment/easytutorials/barbershop project/Barber_Shop_img/spinner_1.gif") no-repeat center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}

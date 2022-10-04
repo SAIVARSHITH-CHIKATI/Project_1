@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=Merriweather:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Playfair+Display:ital,wght@1,400;1,500;1,600;1,700&family=Prata&family=Tiro+Devanagari+Sanskrit:ital@0;1&display=swap');
+
+*
+{
+	margin: 0;
+	padding: 0;
+    box-sizing: border-box;
+}
+
+header
+{
+	padding: 10px 90px;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);/*for stiff colour background remove this line of code*/
+
+}
+header/*(Logo                               Home About Menu Experts Testimonials Contact)*/
+{
+	position: fixed;/*When we assign position: absolute then the header will be present only at banner page;and one more point to be noticed is sticky value for position  */
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 20px 100px;/*vary the values to observe changes*/
+	z-index: 100;/*vary by putting z-index=1*/
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	background: rgba(0, 0, 0, 0.5);/*linear-gradient(65deg,#fff,deepskyblue)*/
+	transition: 0.5s;
+}
+
+header .navigation
+{
+	/*position: relative;*/
+	display: flex;
+}
+header .navigation li 
+{
+	list-style: none;/*removes underline in list elements*/
+	margin-left: 50px;/*play with margin values to observe changes*/
+}
+header .navigation li a 
+{
+	text-decoration: none;/*converts text color from blue to black*/
+	color: gainsboro;
+	font-size: 20px;
+	font-weight: 1000;/*check using values in range 500-1000 to observe changes*/
+	transition: 0.3s;
+}
+header .navigation li a:hover
+{
+	background: rgba(0, 0, 0, 1.0);
+	border-radius: 5px;
+}
+/*---------------------sublist involvement----------------------*/
+header ul li ul 
+{
+	position: absolute;
+	top: 39px;/*vary to vary the position of sublist*/
+	left: 0;
+	background: #000;
+	display: block;
+	width: 200px;
+	transition: 0.5s;
+	opacity: 0;
+	visibility: hidden;
+	margin-left: 1030px;
+	margin-top: 25px;
+
+}
+header ul li ul
+{
+	background: rgba(0, 0, 0, 0.5);
+}
+
+header ul li:hover ul
+{
+	opacity: 1;
+	visibility: visible;
+}
+
+
+
+
+.contact 
+{
+	position: relative;
+	min-height: 100vh;
+	padding: 50px 100px;/*50px top-bottom and 100px left-right*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;/*remove this to observe change it becomes row aligned*/
+	background: url("D:/webdevelopment/projects/IIche Project/Images/ContactUs_Images/image-1.jpg");
+	background-size: cover;
+}
+.overlay{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	border-radius: 7px;
+	cursor: pointer;
+	background: linear-gradient(rgba(0,0,0,0.5),#ff4dd2);
+	opacity: 0.7;
+	transition: 1s;
+}
+ 
+.contact .content
+{
+	max-width: 800px;
+	text-align-last: center;
+	z-index: 100;
+
+}
+.contact .content h2 
+{
+	font-size: 36px;
+	font-weight: 500;
+	color: #fff;
+}
+
+.contact .content p 
+{
+	font-weight: 500;
+	color: #fff;
+}
+.container/*contains contactInfo and contact form*/
+{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+	z-index: 100;
+
+}
+
+.container .contactInfo
+{
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+}
+.container .contactInfo .box 
+{
+	position: relative;
+	padding: 20px 0;
+	display: flex;
+}
+.container .contactInfo .box .icon 
+{
+	min-width: 60px;
+	height: 60px;
+	background: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	font-size: 22px;
+}
+
+.container .contactInfo .box .text 
+{
+	display: flex;
+	margin-left: 20px;
+	font-size: 16px;
+	color: #fff;
+	flex-direction: column;/*edit this like remove or replace with some other value to observe changes*/
+	font-weight: 200;
+
+}
+.container .contactInfo .box .text h3 
+{
+	font-weight: 500;
+	color: #00bcd4;
+}
+.contactForm 
+{
+	width: 40%;
+	padding: 40px;/*elements within the box will have a padding 40px with walls of box*/
+	background: #fff;/*try to use a Image background using url()*/
+
+}
+.contactForm h2 
+{
+	font-size: 30px;
+	color: #333;
+	font-weight: 500;
+}
+.contactForm .inputBox
+{
+	position: relative;
+	width: 100%;/*vary values to observe changes*/
+	margin-top: 10px;
+}
+.contactForm .inputBox input,
+.contactForm .inputBox textarea
+{
+	width: 100%;/*vary values to observe changes*/
+	padding: 5px 0;
+	font-size: 16px;
+	margin: 10px 0;
+	border: none;/*remove this to observe changes*/
+	border-bottom: 2px solid #333;
+	outline: none;
+}
+
+.contactForm .inputBox span
+{
+	position: absolute;/*vary to observe changes*/
+	left: 0;/*remove to observe changes with position: absolute;*/
+	padding: 5px 0;
+	font-size: 16px;
+	margin: 10px 0;
+	pointer-events: none;
+	transform: 0.5s;
+	color: #666;
+}
+.contactForm .inputBox input:focus ~ span,
+.contactForm .inputBox input:valid ~ span, 
+.contactForm .inputBox textarea:focus ~ span, 
+.contactForm .inputBox textarea:valid ~ span 
+{
+	color: #e91e63;
+	font-size: 12px;
+	transform: translateY(-20px);
+}
+.contactForm .inputBox input[type="submit"]
+{
+	width: 100%;
+	background: #00bcd4;
+	color: #fff;
+	cursor: pointer;
+	border: none;
+	padding: 10px;
+	font-size: 18px;
+}
+
+
+/*-----------------------PRELOADER------------------------------*/
+#preloader
+{
+    background: #fff url("D:/webdevelopment/easytutorials/barbershop project/Barber_Shop_img/spinner_1.gif") no-repeat center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+
+@media (max-width: 991px)
+{
+	.contact
+	{
+		padding: 50px;
+	}
+	.container
+	{
+		flex-direction: column;
+	}
+	.container .contactInfo
+	{
+		margin-bottom: 40px;
+	}
+	.container .contactInfo,
+	.container .contactForm
+	{
+		width: 100%;
+	}
+}

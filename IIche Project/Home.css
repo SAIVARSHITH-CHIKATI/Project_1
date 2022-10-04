@@ -1,0 +1,484 @@
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=Merriweather:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Playfair+Display:ital,wght@1,400;1,500;1,600;1,700&family=Prata&family=Tiro+Devanagari+Sanskrit:ital@0;1&display=swap');
+
+
+
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Playfair Display', serif;
+	scroll-behavior: smooth;
+}
+/*--------------sticky header-----------------------*/
+
+
+
+
+header
+{
+	padding: 10px 90px;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);/*for stiff colour background remove this line of code*/
+
+}
+header/*(Logo                               Home About Menu Experts Testimonials Contact)*/
+{
+	position: fixed;/*When we assign position: absolute then the header will be present only at banner page;and one more point to be noticed is sticky value for position  */
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 20px 100px;/*vary the values to observe changes*/
+	z-index: 100;/*vary by putting z-index=1*/
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	background: rgba(0, 0, 0, 0.5);/*linear-gradient(65deg,#fff,deepskyblue)*/
+	transition: 0.5s;
+}
+
+header .navigation
+{
+	/*position: relative;*/
+	display: flex;
+}
+header .navigation li 
+{
+	list-style: none;/*removes underline in list elements*/
+	margin-left: 50px;/*play with margin values to observe changes*/
+}
+header .navigation li a 
+{
+	text-decoration: none;/*converts text color from blue to black*/
+	color: gainsboro;
+	font-size: 20px;
+	font-weight: 1000;/*check using values in range 500-1000 to observe changes*/
+	transition: 0.3s;
+}
+header .navigation li a:hover
+{
+	background: rgba(0, 0, 0, 1.0);
+	border-radius: 5px;
+}
+/*---------------------sublist involvement----------------------*/
+header ul li ul 
+{
+	position: absolute;
+	top: 39px;/*vary to vary the position of sublist*/
+	left: 0;
+	background: #000;
+	display: block;
+	width: 200px;
+	transition: 0.5s;
+	opacity: 0;
+	visibility: hidden;
+	margin-left: 1030px;
+	margin-top: 25px;
+
+}
+header ul li ul
+{
+	background: rgba(0, 0, 0, 0.5);
+}
+
+header ul li:hover ul
+{
+	opacity: 1;
+	visibility: visible;
+}
+
+
+
+/*----------------------Image Slider Part CODE CSS----------------------------------*/
+
+.banner
+{
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+
+}
+.slider
+{
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+}
+#slideImg
+{
+	width: 100%;
+	height: 100vh;
+	animation: zoom 3s linear infinite;
+}
+
+@keyframes zoom
+{
+	0%{
+		transform: scale(1.3);
+	}
+	15%{
+		transform: scale(1);
+	}
+	85%{
+		transform: scale(1);
+	}
+	100%{
+		transform: scale(1.3);
+	}
+}
+
+
+.overlay
+{
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(to bottom,rgba(0,0,0,0.85),#FD841f);/*for overlay with color: #3475ca*/
+	/*background: linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.1));*//*default(0.7,0.7)*/
+	position: absolute;
+	top: 0;
+}
+.navbar
+{
+	width: 85%;
+	display: flex;
+	align-items: center;
+	margin: 35px auto;/*some change will be observed play with it*/
+
+}
+.logo
+{
+	flex-basis: 15%;
+}
+.logo Img{
+	width: 50px;
+	cursor: pointer;
+}
+.menu-icons
+{
+	flex: 1;
+	align-items: center;
+	text-align-last: right;
+}
+.menu-icons img 
+{
+	width: 40px;
+	margin-left: 40px;
+	cursor: pointer;
+}
+.content
+{
+	width: 60%;
+	color: #ff8c00;
+	margin: 160px auto 0;
+	text-align: center;
+}
+.content h1
+{
+	font-size: 110px;
+	color: #FD841f;
+}
+.content h3
+{
+	width: 100%;
+	margin: 30px auto 100px;
+	/*font-family: 'Cinzel', serif;*/
+	letter-spacing: 2px;
+	font-weight: 900;
+	line-height: 25px;
+	font-size: 30px;
+	color: darkorange;
+}
+
+
+
+/*----------------------Container_1 -----------------*/
+
+.container_1
+{
+	background: #000;/*here is one method to create a section ,we want to create a section use the class in section with background some color and padding 200px*/
+	padding: 50px;
+	text-align: center;
+}
+section h2
+{
+	color: darkorange;/*blanchedalmond*/
+	text-decoration: underline;
+	font-size: 55px;
+}
+.container_1 .imgBox
+{
+    /*background: #fff;*/
+	display: flex;
+	justify-content: start;
+	align-items: flex-start;
+	/*flex-wrap: wrap;*/
+	margin-top: 20px;/*on increasing margin-top property to 200px from 40px we observe the blue box size increases*/
+	/*margin-left: 100px;*/
+}
+.container_1 .imgBox img 
+{
+	max-width: 380px;/*on  increasing size from 200px to 300px size of google,amazon,twitter images increases by their width*/
+	margin-top: 70px;
+	opacity: 1;
+	cursor: none;
+	margin-right: 100px;
+}
+
+.container_1 .content
+{
+	text-align: left;
+	padding: 0px 0px 50px 200px;
+	margin: -370px 0px 0px 550px;/*-250px brings the content to top*/
+
+}
+.content p
+{
+	font-size: 30px;
+	padding: 0px 0px 0px 0px;/*to change font approach top '*' and you will get to know */
+	font-family: sans-serif;
+    color: azure;
+}
+
+/*--------------------END OF Container_1-----------------------------*/
+
+/*-----------------------Container_2--------------------------------*/
+.container_2
+{
+	background: linear-gradient(to bottom,#Fd841f,#fff);/*azure,aliceblue,antiquewhite,aquamarine,Lavender*/
+}
+
+.container_2 .heading_2
+{
+	color:black;/*lightgoldenrodyellow*/
+	justify-content: center;
+	align-items: center;
+	margin-left: 650px;
+}
+.container_2 .imgBox_2
+{
+	display: flex;
+	justify-content: center;
+	/*align-items: center;*/
+}
+.container_2 .content_2
+{
+	color: black;
+	font-size: 40px;
+	font-family: 'Dancing Script', cursive;
+}
+.target
+{
+	justify-content: center;
+	align-items: center;
+	margin:0px 0px 0px 675px;
+}
+
+.target img
+{
+	width: 150px;
+	justify-content: center;
+	align-items: center;
+}
+/*----------------------------END OF Container_2*/
+
+/*------------------------------FOOTER------------------------------------------------*/
+footer
+{
+	position: relative;
+	width: 100%;
+	height: auto;
+	padding: 50px 100px;/*because of 50px top,bottom margin we have V^2 services in white background reamianing entire footer in blue background*/
+	background: linear-gradient(#fd841f,#fff);/*footer color*//*default: #3044a5*/
+}
+footer .container/*(container in footer which is considered to be a seperate category)
+{
+	width: 100%;
+	display: grid;
+	grid-template-columns: 2fr 1fr 1fr 1fr;
+	grid-gap: 20px;/*manages distance between each column*/
+}
+
+footer .container .sec h2 
+{
+	position: relative;
+	color: azure;
+	font-weight: 500;
+	margin-bottom: 15px;
+}
+footer .container .sec h2::before/*used to obtain the yellow underline under headins like aboutus etc..*/
+{
+	content: '';
+	position: absolute;
+	bottom: -5px;
+	left: 0;
+	width: 50px;
+	height: 2px;
+	background: #ffeb3b;
+}
+footer .container .sec p
+{
+	color: #000;
+}
+.sci 
+{
+	margin-top: 10px;
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	margin-left: 500px;
+	grid-template-columns: repeat(4, 50px);
+	grid-gap: 10px;
+}
+.sci li 
+{
+	list-style: none;
+}
+.sci li a
+{
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	background: darkorange;/*Default: #3e56cb*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	border-radius: 4px;
+	align-items: center;
+}
+.sci li a:hover 
+{
+	background: #6380fe;
+}
+
+.sci li a .fa 
+{
+	color: #fff;
+	font-size: 20px;
+}
+
+.quicklinks
+{
+	position: relative;
+}
+.quicklinks li 
+{
+	list-style: none;
+}
+.quicklinks li a
+{
+	color: #fff;
+	text-decoration: none;
+	margin-bottom: 10px;
+	display: inline-block;
+}
+.quicklinks li a:hover 
+{
+	color: aquamarine;
+}
+
+.info 
+{
+	position: relative;
+}
+
+.info li {
+	display: grid;
+	grid-template-columns: 30px 1fr;
+}
+.info li span:nth-child(1)
+{
+	color: #000;
+	font-size: 20px;
+}
+.info li span 
+{
+	color: #000;
+}
+.info a 
+{
+	color: #000;
+	text-decoration: none;
+}
+.info a:hover
+{
+	color: aquamarine;
+}
+.copyrightText
+{
+	width: 100%;
+	/*background: #FD841f;*//*copyright background color*/
+    background: linear-gradient(to right ,#000,#FD841F);
+	padding: 100px 100px;
+	text-align: center;
+	color: #fff;
+}
+
+
+
+
+/*Embed google map code*/
+
+.container_3
+{
+    background: linear-gradient(to right ,#000,#FD841F);
+	display: flex;
+	justify-content: last baseline;
+	padding: 100px 0px;
+	align-items: flex-start;
+	height: 100vh;
+	width: 100%;
+	flex-direction: row;
+}
+iframe
+{
+	width: 50%;
+}
+.card
+{
+	width: 800px;/*Creating a card type of specified width and height*/
+	height: 420px;
+	justify-content: center;
+	align-items: center;
+	background: radial-gradient(deepskyblue,magenta);/*radial-gradient(deepskyblue,magenta); looks good*/
+	/*padding: 200px 295px;*/
+}
+.picture
+{
+
+	width: 800px;
+	height: 450px;
+}
+
+.overlay_1{
+	width: 100%;
+	height: 100%;
+	width: 800px;
+	height: 450px;
+	margin-top: -454px;
+	position: relative;
+	z-index: 1;
+	top: 0;
+	border-radius: 0px;
+	cursor: pointer;
+	/*background: linear-gradient(120deg,#1f85de,#de781f);*/
+    background: linear-gradient(to right ,#000,#FD841F);
+	opacity: 0.7;
+	transition: 1s;
+}
+
+/*------------------------PRELOADER CSS------------------------*/
+#preloader
+{
+    background: #fff url("D:/webdevelopment/easytutorials/barbershop project/Barber_Shop_img/spinner_1.gif") no-repeat center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+

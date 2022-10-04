@@ -1,0 +1,162 @@
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
+
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Libre Baskerville', serif;
+}
+
+body
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	width: 100%;
+	background: azure;/*darkGoldenRod*/
+}
+
+
+/*---------------------------HEADER OR NAVIGATION BAR ----------------------------------*/
+
+header
+{
+	padding: 10px 90px;
+	/*box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7)*/;/*for stiff colour background remove this line of code*/
+
+}
+header/*(Logo                               Home About Menu Experts Testimonials Contact)*/
+{
+	position: fixed;/*When we assign position: absolute then the header will be present only at banner page;and one more point to be noticed is sticky value for position  */
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 20px 70px;/*vary the values to observe changes*/
+	z-index: 100;/*vary by putting z-index=1*/
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	background: rgba(0, 0, 0, 0.5);/*linear-gradient(65deg,#fff,deepskyblue)*/
+	transition: 0.5s;
+}
+
+header .navigation
+{
+	/*position: relative;*/
+	display: flex;
+}
+header .navigation li 
+{
+	list-style: none;/*removes underline in list elements*/
+	margin-left: 50px;/*play with margin values to observe changes*/
+}
+header .navigation li a 
+{
+	text-decoration: none;/*converts text color from blue to black*/
+	color: gainsboro;
+	font-size: 17px;
+	font-weight: 1000;/*check using values in range 500-1000 to observe changes*/
+	transition: 0.3s;
+}
+header .navigation li a:hover
+{
+	background: rgba(0, 0, 0, 1.0);
+	border-radius: 5px;
+}
+/*------------------------CONTAINER_1-----------------------------------------*/
+
+.container_1
+{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-top: 100px;
+}
+.container_1 .hexagon
+{
+	position: relative;
+	width: 300px;
+	height: 300px;
+	margin: 10px;/*50px 20px 70px*/
+	
+}
+.container_1 .hexagon::before
+{
+	content: '';
+	position: absolute;
+	bottom: -70px;/*check with bottom 0 and you will be understood the rest the bottom part */
+	width: 100%;
+	height: 60px;
+	background: radial-gradient(rgba(0, 0, 0, 0.15),transparent,transparent);
+	border-radius: 50%;
+	transition: 0.5s;
+}
+.container_1 .hexagon:hover::before 
+{
+	opacity: 0.8;
+	transform: scale(0.8);
+}
+.container_1 .hexagon .shape
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: black;
+	/*clip-path: polygon(50% 0, 100% 26%, 100% 71%, 51% 100%, 0 73%, 0 26%); #Hexagon*/
+	/*clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); #Rhombus*/
+	/*clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);#Right point*/
+	/*clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%) #Rigth chevron;*/
+	clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);#Bevel
+	transition: 0.5s;
+}
+.container_1 .hexagon:hover .shape
+{
+	transform: translateY(-25px);/*-30px default but as it collides with above image we will make some change*/
+}
+.container_1 .hexagon .shape img
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.container_1 .hexagon .shape .content_1
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	text-align-last: center;
+	background: linear-gradient(45deg,#ffaf1a,rgba(3,169,244,0));/*#03a9f4*/
+	color: #fff;
+	opacity: 0;
+	transform: 0.5s;
+}
+.container_1 .hexagon:hover .shape .content_1
+{
+	opacity: 1;
+}
+
+/*-----------------------PRELOADER------------------------------*/
+#preloader
+{
+    background: #fff url("D:/webdevelopment/easytutorials/barbershop project/Barber_Shop_img/spinner_1.gif") no-repeat center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}

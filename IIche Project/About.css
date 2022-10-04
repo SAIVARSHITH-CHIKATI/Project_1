@@ -1,0 +1,252 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+body{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+/*---------------------------HEADER-----------------------*/
+/*--------------sticky header-----------------------*/
+
+
+
+
+header
+{
+	padding: 10px 90px;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);/*for stiff colour background remove this line of code*/
+
+}
+header/*(Logo                               Home About Menu Experts Testimonials Contact)*/
+{
+	position: fixed;/*When we assign position: absolute then the header will be present only at banner page;and one more point to be noticed is sticky value for position  */
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 20px 100px;/*vary the values to observe changes*/
+	z-index: 100;/*vary by putting z-index=1*/
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	background: rgba(0, 0, 0, 0.5);/*linear-gradient(65deg,#fff,deepskyblue)*/
+	transition: 0.5s;
+}
+
+header .navigation
+{
+	/*position: relative;*/
+	display: flex;
+}
+header .navigation li 
+{
+	list-style: none;/*removes underline in list elements*/
+	margin-left: 50px;/*play with margin values to observe changes*/
+}
+header .navigation li a 
+{
+	text-decoration: none;/*converts text color from blue to black*/
+	color: gainsboro;
+	font-size: 20px;
+	font-weight: 1000;/*check using values in range 500-1000 to observe changes*/
+	transition: 0.3s;
+}
+header .navigation li a:hover
+{
+	background: rgba(0, 0, 0, 1.0);
+	border-radius: 5px;
+}
+/*---------------------sublist involvement----------------------*/
+header ul li ul 
+{
+	position: absolute;
+	top: 39px;/*vary to vary the position of sublist*/
+	left: 0;
+	background: #000;
+	display: block;
+	width: 200px;
+	transition: 0.5s;
+	opacity: 0;
+	visibility: hidden;
+	margin-left: 1030px;
+	margin-top: 25px;
+
+}
+header ul li ul
+{
+	background: rgba(0, 0, 0, 0.5);
+}
+
+header ul li:hover ul
+{
+	opacity: 1;
+	visibility: visible;
+}
+/*-------------------------------------END OF HEADER--------------------------------*/
+.container_1
+{
+    margin: 100px 50px;
+    border-radius: 10px;
+    background: antiquewhite;
+    border: 2px solid rgba(0,0,0,0.5);
+    box-shadow: 18px 20px aliceblue;
+    font-size: 20px;
+}
+.container_2
+{
+    margin: 100px 50px;
+    border-radius: 10px;
+    background: antiquewhite;
+    border: 2px solid rgba(0,0,0,0.5);
+    box-shadow: 18px 20px aliceblue;
+    font-size: 20px;
+}
+.container_3
+{
+    margin: 100px 50px;
+    border-radius: 10px;
+    background: antiquewhite;
+    border: 2px solid rgba(0,0,0,0.5);
+    box-shadow: 18px 20px aliceblue;
+    font-size: 20px;
+}
+.container_4
+{
+    margin: 100px 50px;
+    max-width: 1460px;
+    border-radius: 10px;
+    background: aliceblue;
+    border: 2px solid rgba(0,0,0,0.5);
+    
+    /* box-shadow: 5px 20px #8888; */
+}
+h1
+{
+    text-decoration: underline;
+    font-size: 25px;
+    text-align: center;
+    color: darkorange;
+}
+.card-title
+{
+    font-size: 30px;
+}
+.ImgBx 
+{
+    display: flex;
+    margin: 10px;
+    background: blanchedalmond;
+    border-radius: 5px;
+    padding: 30px;
+}
+.ImgBx p
+{
+    padding-top: 30px;
+    font-size: 20px;
+    font-family: 'Times New Roman', serif;
+}
+.ImgBx img
+{
+    max-width: 200px;
+    margin-right: 50px;
+    border-radius: 50%;
+}
+h3 
+{
+    text-decoration: underline;
+}
+.container_5
+{
+    margin: 50px;
+    border-radius: 10px;
+    background: antiquewhite;
+    border: 2px solid rgba(0,0,0,0.5);
+    box-shadow: 18px 20px aliceblue;
+    display: flex;
+}
+.card_title_2
+{
+    max-height: 90px;
+    /* background: blue; */
+    align-items: center;
+    justify-content: center;
+}
+.prez_card
+{
+    background: azure;
+    margin-top: 100px;
+    max-height: 250px;
+    border: 2px solid rgba(0,0,0,0.5);
+    box-shadow: 18px 20px #888;
+    border-radius: 25px;
+}
+.vice_prez_card
+{
+    background: azure;
+    /* margin: 20px; */
+    margin-top: 380px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    border: 2px solid rgba(0,0,0,0.5);
+    box-shadow: 18px 20px #888;
+    border-radius: 25px;
+}
+.prez_card img 
+{
+    max-width: 200px;
+    border-radius: 50%;
+    
+}
+.prez_card p 
+{
+    /* margin-left: 5px; */
+    font-size: 14px;
+    font-family: sans-serif;
+}
+.prez_card h2
+{
+    margin-right: 5px;
+    text-decoration: underline;
+}
+.vice_prez_card img 
+{
+    max-width: 200px;
+    border-radius: 50%;
+    margin: 10px;
+}
+.prez_ImageBox
+{
+    display:flex ;
+}
+.vice_prez_ImageBox
+{
+    display: flex;
+}
+.vice_prez_card p 
+{
+    /* margin-left: 5px; */
+    font-size: 14px;
+    font-family: sans-serif;
+}
+.vice_prez_card h2
+{
+    margin-right: 5px;
+    text-decoration: underline;
+}
+
+
+/*-----------------------PRELOADER------------------------------*/
+#preloader
+{
+    background: #fff url("D:/webdevelopment/easytutorials/barbershop project/Barber_Shop_img/spinner_1.gif") no-repeat center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}

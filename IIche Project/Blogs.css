@@ -1,0 +1,225 @@
+
+body
+{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;/*we can use justify content left and centre to observe variations*/
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(180deg,#fd841f,aliceblue);
+    font-family: sans-serif;
+    
+}
+
+
+
+/*---------------------------HEADER-----------------------*/
+/*--------------sticky header-----------------------*/
+
+
+
+
+header
+{
+	padding: 10px 90px;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);/*for stiff colour background remove this line of code*/
+
+}
+header/*(Logo                               Home About Menu Experts Testimonials Contact)*/
+{
+	position: fixed;/*When we assign position: absolute then the header will be present only at banner page;and one more point to be noticed is sticky value for position  */
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 20px 100px;/*vary the values to observe changes*/
+	z-index: 100;/*vary by putting z-index=1*/
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	background: rgba(0, 0, 0, 0.5);/*linear-gradient(65deg,#fff,deepskyblue)*/
+	transition: 0.5s;
+}
+
+header .navigation
+{
+	/*position: relative;*/
+	display: flex;
+}
+header .navigation li 
+{
+	list-style: none;/*removes underline in list elements*/
+	margin-left: 50px;/*play with margin values to observe changes*/
+}
+header .navigation li a 
+{
+	text-decoration: none;/*converts text color from blue to black*/
+	color: gainsboro;
+	font-size: 20px;
+	font-weight: 1000;/*check using values in range 500-1000 to observe changes*/
+	transition: 0.3s;
+}
+header .navigation li a:hover
+{
+	background: rgba(0, 0, 0, 1.0);
+	border-radius: 5px;
+}
+/*---------------------sublist involvement----------------------*/
+header ul li ul 
+{
+	position: absolute;
+	top: 39px;/*vary to vary the position of sublist*/
+	left: 0;
+	background: #000;
+	display: block;
+	width: 200px;
+	transition: 0.5s;
+	opacity: 0;
+	visibility: hidden;
+	margin-left: 1030px;
+	margin-top: 25px;
+
+}
+header ul li ul
+{
+	background: rgba(0, 0, 0, 0.5);
+}
+
+header ul li:hover ul
+{
+	opacity: 1;
+	visibility: visible;
+}
+/*-------------------------------------END OF HEADER--------------------------------*/
+
+.container
+{
+    width: 1450px;/*for one card in each row make width<=350px,
+    for two cards in each row make width<=740px & width<=1050+60px(extra 40px is to be added as we have made card width (calc(50%-20px))),
+    for three cards in each row width>=1050+60px & width<=1400+80px
+    for four cards in each row width>=1400+80px*/
+    min-height: 600px;/*Increase the height to 2500px to observe changes as cards are also in the container cards height also increases,use 500px for exact looking*/
+    display: flex;
+    flex-wrap: wrap;
+    /*background-color: red;*/
+   
+}
+
+.card
+{
+    position: relative;
+    width: calc(50%-20px);
+    min-height: 300px;
+    background: antiquewhite;
+    margin: 20px;
+    margin-top: 100px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    border: 5px solid #888;
+    box-shadow: 10px 10px  #888;
+
+}
+
+.card .ImgBx
+{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    
+}
+
+.card .ImgBx img
+{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .details
+{
+    position: relative;
+    right: -110px;
+    width: 100%;
+    height: 10%;
+    
+}
+
+.card .details .content
+{
+    padding: 120px;
+    box-sizing: border-box;
+
+}
+.card .details .content h2
+{
+    margin: 0;
+    padding: 0;
+    font-size: 23px;
+    line-height: 0.85em;
+    font-weight: 600;
+}
+.card .details .content h2 span
+{
+    font-size: 14px;
+    columns: #777;
+}
+.card .details .content ul 
+{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.card .details .content ul li
+{
+    list-style: none;
+    margin-left: 2px;
+}
+.card .details .content a
+{
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border: 2px solid #262626;
+    color: #262626;
+    font-weight: 500;
+}
+.card .details .content a:hover
+{
+    background: #262626;
+    color:#fff;
+
+}
+
+
+
+
+/*-----------------------PRELOADER------------------------------*/
+#preloader
+{
+    background: #fff url("D:/webdevelopment/easytutorials/barbershop project/Barber_Shop_img/spinner_1.gif") no-repeat center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+
+
+
+@media (max-width:1200px)
+{
+    .container
+    {
+        width: 100%;
+    }
+}
+@media (max-width:991px)
+{
+    .card
+    {
+        width: calc(50%-20px);
+    }
+}
